@@ -1,0 +1,17 @@
+services:
+  imd-travel:
+    build: ../IMDTravel 
+    ports:
+      - "8080:8080"
+    networks:
+      - tolerancia_falhas_network
+  
+  fidelity:
+    build: ../Fidelity
+    ports:
+      - "8081:8081"
+    networks:
+      - tolerancia_falhas_network
+
+networks:
+  tolerancia_falhas_network:
