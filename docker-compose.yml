@@ -20,7 +20,7 @@ services:
     networks:
       - tolerancia_falhas_network
 
-  exchange:
+  airlines-hub:
     build: ../AirlinesHub
     ports:
       - "8083:8083"
