@@ -27,5 +27,18 @@ services:
     networks:
       - tolerancia_falhas_network
 
+  k6:
+    image: grafana/k6:latest
+    container_name: k6-tf
+    networks:
+      - tolerancia_falhas_network
+    ports:
+      - "6565:6565"
+      - "5665:5665"
+    environment:
+      - K6_WEB_DASHBOARD=true
+    volumes:
+      - ./k6:/scripts
+
 networks:
   tolerancia_falhas_network:
